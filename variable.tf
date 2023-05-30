@@ -18,13 +18,13 @@ variable "project_name_prefix" {
 variable "master_user_data_path" {
   description = "Path for userdata file"
   type = string
-  default = "user_data.sh"
+  default = "${path.module}/user_data.sh"
 }
 
 variable "worker_user_data_path" {
   description = "Path for userdata file"
   type = string
-  default = "worker.sh"
+  default = "${path.module}/worker.sh"
 }
 
 variable "engine_type" {
