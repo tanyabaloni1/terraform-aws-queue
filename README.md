@@ -130,7 +130,6 @@ module "message_queue" {
 | delete_on_termination | Whether EBS volume will be deleted when instance gets deleted | `bool` | `true` | no |
 | kms_key_id | KMS key ID for creating AWS resources | `string` | `n/a` | yes |
 | encrypted | Whether EBS volume will be encrypted | `bool` | `true` | yes |
-| root_volume_size | Root volume size of the EC2 instance | `number` | `50` | yes |
 | volume_type | Volume type for EC2 instance default latest type | `string` | `gp3` | no |
 | audit_logs | KMS key ID for creating AWS resources | `bool` | `false` | no |
 | general_logs | KMS key ID for creating AWS resources | `bool` | `false` | no |
@@ -140,6 +139,8 @@ module "message_queue" {
 | region | Region where resources will deploy | `string` | `us-east-1` | yes |
 | environment_name | Environment name | `string` | `dev` | yes |
 | root_volume_size | Root volume size of the EC2 instance | `number` | `50` | no |
+| master_user_data_path | Path to user data file for master node | `string` | `user_data.sh` | no |
+| worker_user_data_path | Path to user data file for worker node | `string` | `worker.sh` | no |
 
 
 

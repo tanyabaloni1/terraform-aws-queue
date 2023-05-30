@@ -15,6 +15,18 @@ variable "project_name_prefix" {
   type        = string
 }
 
+variable "master_user_data_path" {
+  description = "Path for userdata file"
+  type = string
+  default = "user_data.sh"
+}
+
+variable "worker_user_data_path" {
+  description = "Path for userdata file"
+  type = string
+  default = "worker.sh"
+}
+
 variable "engine_type" {
   type        = string
   description = "Type of broker engine, `ActiveMQ` or `RabbitMQ`"

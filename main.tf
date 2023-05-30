@@ -99,7 +99,7 @@ data "aws_ami" "amazon-linux-2" {
 }
 
 data "template_file" "user_data" {
-  template = file("${path.module}/user_data.sh")
+  template = file(var.master_user_data_path)
   vars = {
     environment_name = var.environment_name
     region           = var.region
@@ -138,7 +138,7 @@ resource "aws_instance" "ec2_rabbitmq_master" {
 }
 
 data "template_file" "user_data_worker" {
-  template = file("${path.module}/worker.sh")
+  template = file(var.worker_user_data_path)
   vars = {
     environment_name = var.environment_name
     region           = var.region
