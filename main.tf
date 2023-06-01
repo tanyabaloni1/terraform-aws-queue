@@ -103,7 +103,7 @@ data "template_file" "user_data" {
   vars = {
     environment_name = var.environment_name
     region           = var.region
-    user_data = file(var.master_user_data_path == "" ? "${path.module}/user_data.sh" : var.master_user_data_path)
+    user_data = file(var.master_user_data_path == "" ? "" : var.master_user_data_path)
   }
 }
 
